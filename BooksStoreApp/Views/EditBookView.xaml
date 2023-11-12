@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BooksStoreApp.Views.EditBookView"
+             Title="Edit book"
+             FlowDirection="LeftToRight">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="Book title : " FontSize="16"
+               VerticalOptions="Center"
+                TextColor="{StaticResource Primary}"/>
+
+        <Entry Grid.Column="1" x:Name="bookTitleEntry"
+               Placeholder="Book title" FontSize="16"
+                TextColor="{StaticResource Primary}"/>
+
+        <Label Grid.Row="1" Text="Author : " FontSize="16"
+               VerticalOptions="Center" HorizontalOptions="End"
+                TextColor="{StaticResource Primary}"/>
+
+        <Picker Grid.Row="1" Grid.Column="1" x:Name="authorsPicker"
+                ItemDisplayBinding="{Binding AuthorName}"
+                 TextColor="{StaticResource Primary}"/>
+
+        <Button Grid.Row="2" Grid.ColumnSpan="2"
+                x:Name="saveChangesBtn" Margin="10"
+                Text="Save" Clicked="saveChangesBtn_Clicked"/>
+    </Grid>
+</ContentPage>
